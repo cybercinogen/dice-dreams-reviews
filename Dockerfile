@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Copy .env file and load it
 COPY .env /app/.env
-ENV PORT=5000
+ENV PORT=10000
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt .
@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose the port the app will run on
-EXPOSE 5000
+EXPOSE 10000
 
 # Add a health check for stability
 HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
