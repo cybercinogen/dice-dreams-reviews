@@ -1,17 +1,14 @@
-# Use a slightly larger base image with more libraries
-FROM python:3.8
+# Dockerfile
 
-# Install system dependencies required by some Python packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    libpq-dev \
-    zlib1g-dev \
-    && rm -rf /var/lib/apt/lists/*
+# Start with a base Python image
+FROM python:3.8
 
 # Set the working directory
 WORKDIR /app
+
+# Copy .env file and load it
+COPY .env /app/.env
+ENV PORT=5000
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt .
@@ -20,8 +17,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code into the container
 COPY . .
 
-# Expose port 5000 for the Flask API
+# Expose the port the app will run on
 EXPOSE 5000
 
-# Run the start.sh script to initiate both the scheduler and the API
+# Add a health check for stability
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+    CMD curl -f http://localhost:$PORT || exit 1
+
+# Start the application
 CMD ["./start.sh"]
