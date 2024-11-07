@@ -4,6 +4,6 @@
 echo "Starting scheduler..."
 python scheduler.py &
 
-# Start the Flask app using Gunicorn in the foreground
-echo "Starting Flask app..."
-gunicorn -b 0.0.0.0:$PORT app:app
+# Start the Flask app using Gunicorn with a 120-second timeout
+echo "Starting Flask app with Gunicorn..."
+gunicorn --timeout 120 -b 0.0.0.0:$PORT app:app
