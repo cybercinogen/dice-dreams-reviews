@@ -4,6 +4,6 @@
 echo "Starting scheduler..."
 python scheduler.py &
 
-# Start the Flask app in the foreground
+# Start the Flask app using Gunicorn
 echo "Starting Flask app..."
-python app.py
+gunicorn -b 0.0.0.0:5000 app:app
