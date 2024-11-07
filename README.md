@@ -169,6 +169,10 @@ Example `cron` job:
 
 Feel free to fork this repository and submit pull requests for additional functionality or bug fixes. 
 
+## **Cloud Deployment and Cost Estimate**
+The estimated cost to run this system in production (24x7) for 30 days with 5 queries per day is approximately $5-10(INR450-INR850) on platforms like Render or DigitalOcean, leveraging their free or low-tier plans for containerized applications.
+Deployed Solution Link: https://dice-dreams-reviews.onrender.com
+
 ## **License**
 
 This project is licensed under the MIT License.
