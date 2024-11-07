@@ -173,6 +173,19 @@ Feel free to fork this repository and submit pull requests for additional functi
 The estimated cost to run this system in production (24x7) for 30 days with 5 queries per day is approximately $5-10(INR450-INR850) on platforms like Render or DigitalOcean, leveraging their free or low-tier plans for containerized applications.
 Deployed Solution Link: https://dice-dreams-reviews.onrender.com
 
-## **License**
+## **Acknowledgments**
+This project was developed with the assistance of various online resources, tools, and libraries to ensure a robust and functional solution.
 
+**License**
+## **Tools and Resources Used**
+- ChatGPT (by OpenAI): ChatGPT was used to provide guidance, troubleshooting support, and code optimization for various aspects of the project. Specific guidance was provided on Flask setup, database configuration, handling Render deployment issues, and enhancing code modularity and readability.
+- Google Play Scraper: The google-play-scraper library was utilized to scrape reviews from the Google Play Store for the Dice Dreams app, enabling regular updates to the review dataset.
+- Flask: Flask was used to develop the REST API, providing endpoints for retrieving categorized reviews with filtering options.
+- SQLAlchemy: SQLAlchemy served as the ORM for managing the SQLite database, enabling efficient storage and retrieval of review data.
+- Render: Render's cloud deployment platform was chosen to host the containerized application, facilitating access to the service online.
+- Docker: Docker was used to containerize the application, ensuring consistency in different environments and simplifying deployment.
+- Each tool and library played an important role in building the final solution, and this project wouldn’t have been possible without these valuable resources. Special thanks to the ChatGPT model for assisting in 
+ troubleshooting, code suggestions, and optimizing workflow design.
+
+## **License**
 This project is licensed under the MIT License.
